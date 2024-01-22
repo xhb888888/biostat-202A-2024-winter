@@ -1,0 +1,26 @@
+---
+title: "hw1"
+author: "Hanbei Xiong"
+format: pdf
+editor: visual
+---
+
+# Problem 1
+
+![](images/4501705890498_.pic.jpg)
+
+# Problem 2
+
+![](images/4511705890506_.pic.jpg)
+
+# Problem 3
+
+![](images/4521705890513_.pic.jpg)
+
+# Problem 4
+
+![](images/4531705890521_.pic.jpg)
+
+# Problem 5
+
+![](images/4541705890527_.pic.jpg)
