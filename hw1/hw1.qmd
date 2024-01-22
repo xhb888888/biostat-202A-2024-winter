@@ -9,18 +9,102 @@ editor: visual
 
 ![](images/4501705890498_.pic.jpg)
 
+Note:
+
+$\sigma-algebra$ B is any collection of sets such that
+
+1.  $\emptyset\in B$
+2.  If $A\in B$, then $A^c\in B$
+3.  If $A_1,A_2,...\in B$, then $\cup_{i=1}^{\infty}A_i\in B$
+
+**(a) Answer:**
+
+Condition 1 is satisfied because $\emptyset\in B$
+
+Condition 2 is satisfied because $S\in B$ and $S^c=\emptyset\in B$
+
+Condition 3 is satisfied because $S,\emptyset\in B$ and $S\cup \emptyset =S\in B$
+
+**(b) Answer:**
+
+Condition 1 is satisfied because $\emptyset\in S \Rightarrow\emptyset\in B$
+
+Condition 2 is satisfied because for all subsets of S denoted $A_i$, $A_i\subseteq S \iff A_i^c \subseteq S$. Then $A_i\in B\iff A_i^c\in B$
+
+Condition 3 is satisfied because for all subsets of S denoted $A_i$, $A_i\subseteq S$ and $\cup_{i=1}^{\infty}A_i\subseteq S$. Then $A_i\in S$ and $\cup_{i=1}^{\infty}A_i \in S$.
+
+**(c) Answer:**
+
+Assume $B_1,B_2$ are two $\sigma-algebra$, we want to prove $B_1\cap B_2$ is also a $\sigma-algebra$
+
+Condition 1 is satisfied because $\emptyset\in B_1$ and $\emptyset\in B_2 \Rightarrow \emptyset\in B_1\cap B_2$
+
+Condition 2 is satisfied because if $A\in B_1\cap B_2$, then $A\in B_1$ and $A\in B_2$ $\Rightarrow A^c\in B_1$ and $A^c\in B_2$ $\Rightarrow A^c\in B_1\cap B_2$
+
+Condition 3 is satisfied because if $A_1,A_2,...\in B_1\cap B_2$, then $A_1,A_2,...\in B_1$ and $A_1,A_2,...\in B_2$ $\Rightarrow \cup_{i=1}^{\infty}A_i\in B_1$ and $\cup_{i=1}^{\infty}A_i\in B_2$ $\Rightarrow \cup_{i=1}^{\infty}A_i\in B_1\cap B_2$
+
 # Problem 2
 
 ![](images/4511705890506_.pic.jpg)
+
+**Answer:**
+
+Pick the cell to remain empty, the number of ways are $C_{1}^n$
+
+Pick the cell among n-1 cells to be filled with two balls, the number of ways are $C_{1}^{n-1}$
+
+Pick the two balls to be filled in the same cell, the number of ways are $C_{2}^n$
+
+Assign n-2 balls to n-2 cells, the number of ways are $(n-2)!$
+
+Total possible ways with no restriction are $n^n$
+
+So the probability is $\frac{C_{1}^n \times C_{1}^{n-1} \times C_{2}^n \times (n-2)!}{n^n}$
 
 # Problem 3
 
 ![](images/4521705890513_.pic.jpg)
 
+**Answer:**
+
+Pick 2r shoes from the n unique shoes, the number of ways are $C_{2r}^n$
+
+Pick a shoe from a pair of shoes, the number of ways are 2 (Left or Right), hence the number of ways to pick 2r pairs of shoes are $2^{2r}$
+
+Total possible ways with no restriction are $C_{2r}^{2n}$
+
+So the probability is $\frac{C_{2r}^n \times 2^{2r}}{C_{2r}^{2n}}$
+
 # Problem 4
 
 ![](images/4531705890521_.pic.jpg)
 
+**Answer:**
+
+We can exclude C1 and see how many subsets the remaining concert can form. The number of subsets are $2^5$
+
+Adding C1 to any one of the subsets above can form a package, so the number of valuable packages are $2^5$
+
+Total possible ways with no restriction are $2^6-1$ because we exclude the empty set.
+
+So the probability is $\frac{2^5}{2^6-1}$
+
 # Problem 5
 
 ![](images/4541705890527_.pic.jpg)
+
+**Answer:**
+
+Pick the three suites among four suites, the number of ways are $C_{3}^4$
+
+Pick a rank from the 13 rank, the number of ways are $C_{1}^{13}$
+
+Pick 2 ranks (denoted a and b) from the 12 rank (exclude the rank being picked above), the number of ways are $C_{2}^{12}$
+
+Pick the suite of the rank a being picked above, the number of ways are $C_{1}^4$
+
+Pick the suite of the rank b being picked above, the number of ways are $C_{1}^4$
+
+Total possible ways with no restriction are $C_{5}^{52}$
+
+So the probability is $\frac{C_{3}^4 \times C_{1}^{13} \times C_{2}^{12} \times C_{1}^4 \times C_{1}^4}{C_{5}^{52}}$
