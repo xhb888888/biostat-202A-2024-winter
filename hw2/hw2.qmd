@@ -1,0 +1,116 @@
+---
+title: "hw2"
+author: "Hanbei Xiong"
+format: pdf
+editor: visual
+---
+
+# Problem 1
+
+![](images/4581706045607_.pic.jpg)
+
+**Answer:**
+
+Let P(new\|previous n-1 coupons are not new) be the probability of a new coupon given the previous n-1 coupons are not new, P(new \| previous n-1 are not new)=P(new \| 1st coupon is not new and 2nd coupon is not new and,..., and (n-1)th coupon is not new)\
+\
+Denote $N_n$ as nth coupon is new and denote $N_nN$ as nth coupon not new, then $N_1N$ means 1st coupon is not new, ... , $N_{n-1}N$ means (n-1)th coupon is not new
+
+$P(N_n|N_1N \cap N_2N\cap...\cap N_{n-1}N)=\frac{P(N_n\cap N_1N \cap N_2N\cap...\cap N_{n-1}N)}{P(N_1N \cap N_2N\cap...\cap N_{n-1}N)}=\frac{}{(1-p_i)^{n-1}}$
+
+Alternatively: $\sum_{1}^{m}(1-p_i)^{n-1}p_i$
+
+# Problem 2
+
+![](images/4591706045614_.pic.jpg)
+
+**Answer:**
+
+Counter example: Let we toss a balanced coin X two times, Let we also toss a balanced coin Y two times. Let we denote H as head and T as tail. Let number of heads of coin X be A, number of heads of coin Y be B, number of tails of coin X be C. Event A and B and independent and event B and C are independent but event A and C are not independent.\
+
+# Problem 3
+
+![](images/4601706045620_.pic.jpg)
+
+**Answer:**
+
+We firstly write down the information we have mathematically:
+
+denote light on as 'LO' and light off as 'LF' denote drunk as 'D' and not drunk as ND
+
+P(D) = 0.1
+
+P(ND) = 0.9
+
+P(LO \| D) = 0.7
+
+P(LF \| D) = 0.3
+
+P(LO \| ND) = 0.9
+
+P(LF \| ND) = 0.1
+
+Question asks for P(D \| LO)
+
+$P(D | LO) =\frac{P(D \cap LO)}{P(LO)}=\frac{P(LO|D)P(D)}{P(LO\cap D)+P(LO\cap ND)}=\frac{P(LO|D)P(D)}{P(LO|D)P(D)+P(LO|ND)P(ND)}=\frac{0.7*0.1}{0.7*0.1+0.9*0.9}=0.0714$
+
+# Problem 4
+
+![](images/4611706045628_.pic.jpg)
+
+**Answer:**
+
+We first write down the information we have mathematically:
+
+$P(A \cap B^C \cap C^C)=0.1$
+
+$P(A^C \cap B \cap C^C)=0.1$
+
+$P(A^C \cap B^C \cap C)=0.1$
+
+$P(A \cap B\cap C^C)=0.12$
+
+$P(A \cap B^C\cap C)=0.12$
+
+$P(A^C \cap B\cap C)=0.12$
+
+$P(A\cap B \cap C|A\cap B)=\frac{1}{3}$
+
+Question asks for $P(A^C \cap B^C \cap C^C| A^C)$
+
+$P(B^C \cap C^C| A^C)=\frac{P(A^C\cap B^C \cap C^C)}{P(A^C)}$
+
+$P(A^C)=1-P(A)$
+
+$P(A)=P(A \cap B \cap C)+P(A \cap B^C \cap C^C)+P(A \cap B\cap C^C)+P(A \cap B^C\cap C)=P(A \cap B \cap C)+0.1+0.12+0.12=P(A \cap B \cap C)+0.34$
+
+$P(A \cap B \cap C)=P(A\cap B\cap C|A\cap B)P(A\cap B)=\frac{1}{3}P(A\cap B)$
+
+$P(A\cap B)=P(A\cap B \cap C)+P(A\cap B \cap C^C)=P(A\cap B \cap C)+0.12=\frac{1}{3}P(A\cap B)+0.12$
+
+By solving the formula above, we can get: $P(A\cap B)=0.18$
+
+$P(A \cap B \cap C)=\frac{1}{3}P(A\cap B)=\frac{1}{3}*0.18=0.06$
+
+$P(A)=P(A \cap B \cap C)+0.34=0.06+0.34=0.4$
+
+$P(A^C\cap B^C \cap C^C)$ equals to 1 minus all the other events
+
+$P(A^C\cap B^C \cap C^C)=1-(P(A \cap B \cap C)+0.1*3+0.12*3)=1-(0.06+0.3+0.36)=0.28$
+
+Hence,
+
+$P(B^C \cap C^C| A^C)=\frac{P(A^C\cap B^C \cap C^C)}{P(A^C)}=\frac{0.28}{1-0.4}\approx 0.4667$
+
+# Problem 5
+
+![](images/4621706045635_.pic.jpg)
+
+**Answer:**
+
+Denote male with circulation problem as 'C' and denote smoker as 'S'
+
+$P(C)=0.25$ $P(C^C)=0.75$ $P(S|C)=2*P(S|C^C)$
+
+Question asks for $P(C|S)$
+
+$P(C|S)=\frac{P(C\cap S)}{P(S)}=\frac{P(S|C)P(C)}{P(S\cap C)+P(S\cap C^C)}=\frac{P(S|C)P(C)}{P(S|C)P(C)+P(S|C^C)P(C^C)}=\frac{2P(S|C^C)P(C)}{2P(S|C^C)P(C)+P(S|C^C)P(C^C)}=\frac{2P(S|C^C)P(C)}{P(S|C^C)(2P(C)+P(C^C))}=\frac{2P(C)}{2P(C)+P(C^C)}=\frac{2*0.25}{2*0.25+0.75}=0.4$
