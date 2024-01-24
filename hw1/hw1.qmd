@@ -87,7 +87,7 @@ Adding C1 to any one of the subsets above can form a package, so the number of v
 
 Total possible ways with no restriction are $2^6-1$ because we exclude the empty set.
 
-So the probability is $\frac{2^5}{2^6-1}$
+So the probability is $\frac{2^5}{2^6-1}\approx0.5079$
 
 # Problem 5
 
@@ -107,4 +107,4 @@ Pick the suite of the rank b being picked above, the number of ways are $C_{1}^4
 
 Total possible ways with no restriction are $C_{5}^{52}$
 
-So the probability is $\frac{C_{3}^4 \times C_{1}^{13} \times C_{2}^{12} \times C_{1}^4 \times C_{1}^4}{C_{5}^{52}}$
+So the probability is $\frac{C_{3}^4 \times C_{1}^{13} \times C_{2}^{12} \times C_{1}^4 \times C_{1}^4}{C_{5}^{52}}\approx 0.0211$
