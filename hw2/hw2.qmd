@@ -11,13 +11,13 @@ editor: visual
 
 **Answer:**
 
-Let P(new\|previous n-1 coupons are not new) be the probability of a new coupon given the previous n-1 coupons are not new, P(new \| previous n-1 are not new)=P(new \| 1st coupon is not new and 2nd coupon is not new and,..., and (n-1)th coupon is not new)\
-\
-Denote $N_n$ as nth coupon is new and denote $N_nN$ as nth coupon not new, then $N_1N$ means 1st coupon is not new, ... , $N_{n-1}N$ means (n-1)th coupon is not new
+Assume we are selecting coupon i which is a new type of couple, the probability is $p_i$ where $i\in {1,\dots , m}$
 
-$P(N_n|N_1N \cap N_2N\cap...\cap N_{n-1}N)=\frac{P(N_n\cap N_1N \cap N_2N\cap...\cap N_{n-1}N)}{P(N_1N \cap N_2N\cap...\cap N_{n-1}N)}=\frac{}{(1-p_i)^{n-1}}$
+Hence, the probability of previous n-1 coupons are not coupon i is $(1-p_i)^{n-1}$
 
-Alternatively: $\sum_{1}^{m}(1-p_i)^{n-1}p_i$
+Hence, the probability of previous n-1 coupons are not coupon i and the nth coupon is coupon i is $(1-p_i)^{n-1}p_i$
+
+Since $i\in {1,\dots , m}$, the probability of previous n-1 coupons are not coupon i and the nth coupon is coupon i given i can be any number in range (1,m) is $\sum_{1}^{m}(1-p_i)^{n-1}p_i$
 
 # Problem 2
 
@@ -25,7 +25,21 @@ Alternatively: $\sum_{1}^{m}(1-p_i)^{n-1}p_i$
 
 **Answer:**
 
-Counter example: Let we toss a balanced coin X two times, Let we also toss a balanced coin Y two times. Let we denote H as head and T as tail. Let number of heads of coin X be A, number of heads of coin Y be B, number of tails of coin X be C. Event A and B and independent and event B and C are independent but event A and C are not independent.\
+Counter example: Let we toss a balanced coin X two times. Let A be the event that the first toss is head. Let B be the event that the second toss is head. Let C be the event that the first toss is tail. Event A and B and independent and event B and C are independent but event A and C are not independent.
+
+Mathematically, we have:
+
+$P(A)=P(C)=\frac{1}{2}$
+
+$P(B)=\frac{1}{2}$
+
+$P(A\cap B)=\frac{1}{4}$
+
+$P(B\cap C)=\frac{1}{4}$
+
+$P(A\cap C)=0$
+
+Hence, $P(A\cap B)=P(A)P(B)$ and $P(B\cap C)=P(B)P(C)$ but $P(A\cap C)\neq P(A)P(C)$
 
 # Problem 3
 
@@ -45,13 +59,13 @@ P(LO \| D) = 0.7
 
 P(LF \| D) = 0.3
 
-P(LO \| ND) = 0.9
+P(LO \| ND) = 0.1
 
-P(LF \| ND) = 0.1
+P(LF \| ND) = 0.9
 
 Question asks for P(D \| LO)
 
-$P(D | LO) =\frac{P(D \cap LO)}{P(LO)}=\frac{P(LO|D)P(D)}{P(LO\cap D)+P(LO\cap ND)}=\frac{P(LO|D)P(D)}{P(LO|D)P(D)+P(LO|ND)P(ND)}=\frac{0.7*0.1}{0.7*0.1+0.9*0.9}=0.0714$
+$P(D | LO) =\frac{P(D \cap LO)}{P(LO)}=\frac{P(LO|D)P(D)}{P(LO\cap D)+P(LO\cap ND)}=\frac{P(LO|D)P(D)}{P(LO|D)P(D)+P(LO|ND)P(ND)}=\frac{0.7*0.1}{0.7*0.1+0.1*0.9}=\frac{7}{16}$
 
 # Problem 4
 

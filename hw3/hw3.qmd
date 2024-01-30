@@ -1,0 +1,96 @@
+---
+title: "hw2"
+author: "Hanbei Xiong"
+format: pdf
+editor: visual
+---
+
+# Problem 1
+
+![](images/4681706478246_.pic.jpg)
+
+**Answer:**
+
+$$
+\left\{
+    \begin{array}{ll}
+        V=5 & \text{if } 0<t < 3 \\
+        V=2T & \text{if } t \geq 3
+    \end{array}
+\right.
+$$
+
+So the support of cdf of V with its support is:
+
+$$
+F_{V}(v) = 
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } v < 5 \\
+        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt & \text{if } 5\leq v <6 \\
+        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt+\int_{3}^{v/2} \frac{1}{1.5}e^{-t/(1.5)}dt & \text{if } v \geq 6
+    \end{array}
+\right.
+$$
+
+# Problem 2
+
+![](images/4691706478253_.pic.jpg)
+
+**(a) Answer:**
+
+Since $\lambda$ is positive, $f(x) = \frac{1}{2} \lambda e^{-\lambda |x|}$ is positive for all x.
+
+$\int_{-\infty}^{\infty}f(t)=\int_{0}^{\infty}\frac{1}{2}\lambda e^{-\lambda t}+\int_{-\infty}^{0}\frac{1}{2}\lambda e^{\lambda t}=-\frac{1}{2} e^{-\lambda t}\Big|_0^\infty + \frac{1}{2} e^{\lambda t}\Big|_{-\infty}^{0}=\frac{1}{2}+\frac{1}{2}=1$
+
+Both properties of pdf have satisfied. We can conclude that $f(x)$ is a pdf.
+
+**(b) Answer:**
+
+$P(X<t)=F_{X}(t)$
+
+$$
+F_{X}(t) = 
+\left\{
+    \begin{array}{ll}
+        \int_{0}^{t} \frac{1}{2} \lambda e^{-\lambda x} dx & \text{if } t \geq 0 \\
+        \int_{t}^{0} \frac{1}{2} \lambda e^{\lambda x} dx & \text{if } t < 0
+    \end{array}
+\right.
+$$
+
+$$
+F_{X}(t) = 
+\left\{
+    \begin{array}{ll}
+        -\frac{1}{2} e^{-\lambda t} & \text{if } t \geq 0 \\
+        \frac{1}{2} e^{\lambda t} & \text{if } t < 0
+    \end{array}
+\right.
+$$
+
+**(c) Answer:**
+
+Let $V=|x|$
+
+$P(|x|<t)=P(V<t)=P_{V}(t)$
+
+# Problem 3
+
+![](images/4701706478264_.pic.jpg)
+
+# Problem 4
+
+![](images/4711706478272_.pic.jpg)
+
+# Problem 5
+
+![](images/4721706478278_.pic.jpg)
+
+# Problem 6
+
+![](images/4731706478289_.pic.jpg)
+
+# Problem 7
+
+![](images/4741706478296_.pic.jpg)
