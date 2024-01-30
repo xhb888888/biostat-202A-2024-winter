@@ -53,8 +53,8 @@ $$
 F_{X}(t) = 
 \left\{
     \begin{array}{ll}
-        \int_{0}^{t} \frac{1}{2} \lambda e^{-\lambda x} dx & \text{if } t \geq 0 \\
-        \int_{t}^{0} \frac{1}{2} \lambda e^{\lambda x} dx & \text{if } t < 0
+        \int_{-\infty}^{0} \frac{1}{2} \lambda e^{\lambda x} dx & \text{if } t < 0 \\
+        \int_{-\infty}^{0} \frac{1}{2} \lambda e^{\lambda x} dx+\int_{0}^{t} \frac{1}{2} \lambda e^{-\lambda x} dx & \text{if } t \geq 0
     \end{array}
 \right.
 $$
@@ -63,17 +63,17 @@ $$
 F_{X}(t) = 
 \left\{
     \begin{array}{ll}
-        -\frac{1}{2} e^{-\lambda t} & \text{if } t \geq 0 \\
-        \frac{1}{2} e^{\lambda t} & \text{if } t < 0
+        \frac{1}{2} & \text{if } t < 0 \\
+        \frac{1}{2}-\frac{1}{2} e^{-\lambda t}+\frac{1}{2} =1-\frac{1}{2} e^{-\lambda t}& \text{if } t \geq 0 
     \end{array}
 \right.
 $$
 
 **(c) Answer:**
 
-Let $V=|x|$
+Let $T=|X|$
 
-$P(|x|<t)=P(V<t)=P_{V}(t)$
+$P(|X|<t)=P(T<t)=P_{T}(t)$
 
 # Problem 3
 
@@ -90,6 +90,56 @@ $P(|x|<t)=P(V<t)=P_{V}(t)$
 # Problem 6
 
 ![](images/4731706478289_.pic.jpg)
+
+**Answer:**
+
+Based on the assumption, we have
+
+$$
+F_X(x)=P(X) = 
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } x \leq 0 \\
+        \frac{\pi x^2}{\pi}=x^2 & \text{if } 0<x<1 \\
+        1& \text{if } x \geq 1 
+    \end{array}
+\right.
+$$ Then, the pdf of X is:
+
+$$
+f(x) = 
+\left\{
+    \begin{array}{ll}
+        2x & \text{if } 0<x<1 \\
+        0& \text{else }  
+    \end{array}
+\right.
+$$
+
+Since $Y=X^3$, the cdf of Y is:
+
+$$
+F_Y(y)=P(Y) = 
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } y \leq 0 \\
+        y^6 & \text{if } 0<y<1 \\
+        1& \text{if } y \geq 1 
+    \end{array}
+\right.
+$$
+
+Then, the pdf of Y is:
+
+$$
+f(y) = 
+\left\{
+    \begin{array}{ll}
+        6y & \text{if } 0<y<1 \\
+        0& \text{else }  
+    \end{array}
+\right.
+$$
 
 # Problem 7
 
