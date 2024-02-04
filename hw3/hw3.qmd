@@ -11,6 +11,8 @@ editor: visual
 
 **Answer:**
 
+From the given information. We can rewrite V as:
+
 $$
 \left\{
     \begin{array}{ll}
@@ -20,15 +22,28 @@ $$
 \right.
 $$
 
-So the support of cdf of V with its support is:
+So the cdf of V with its support can be expressed as:
+
+$$
+F_{V}(v) = 
+\left\{
+    \begin{array}{ll}
+        P(T \leq 0)=0 & \text{if } v < 5 \\
+        P(T\leq 3)=P_{T}(3) & \text{if } 5\leq v <6 \\
+        P(V\leq v)=P(2T\leq v)=P(T\leq \frac{v}{2})=P_{T}(\frac{v}{2}) & \text{if } v \geq 6
+    \end{array}
+\right.
+$$
+
+The cdf of V is:
 
 $$
 F_{V}(v) = 
 \left\{
     \begin{array}{ll}
         0 & \text{if } v < 5 \\
-        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt & \text{if } 5\leq v <6 \\
-        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt+\int_{3}^{v/2} \frac{1}{1.5}e^{-t/(1.5)}dt & \text{if } v \geq 6
+        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt= -e^{-t/(1.5)}\Big|_{0}^{3}=-e^{-2}+1& \text{if } 5\leq v <6 \\
+        \int_{0}^{3} \frac{1}{1.5}e^{-t/(1.5)}dt+\int_{3}^{v/2} \frac{1}{1.5}e^{-t/(1.5)}dt =1-e^{-v/3}& \text{if } v \geq 6
     \end{array}
 \right.
 $$
@@ -74,11 +89,11 @@ $$
 Since $P(|X|<t)=P(-t<X<t)$
 
 $$
-F_{|X|}(t) = 
+P(|X|<t) = 
 \left\{
     \begin{array}{ll}
         P(|X|<t)=0 & \text{if } t < 0 \\
-        P(-t<X<t)=\int_{-t}^{t}\frac{1}{2}\lambda e^{-\lambda p}dp= -\frac{1}{2} e^{-\lambda p}\Big|_{-t}^t=-\frac{1}{2} e^{-\lambda t}+\frac{1}{2} e^{\lambda t}& \text{if } t \geq 0
+        P(|X|<t)=P(-t<X<t)=\int_{-t}^{0}\frac{1}{2} \lambda e^{\lambda x}dx+\int_{0}^{t}\frac{1}{2} \lambda e^{-\lambda x}dx=1-e^{-\lambda t}& \text{if } t \geq 0
     \end{array}
 \right.
 $$
@@ -89,15 +104,14 @@ $$
 
 **Answer:**
 
-We can simply find the cdf of X:
+We can simply find the cdf of X which is a monotone function and also uniform(0,1) distribution:
 
 $$
-u(x)=F_{X}(t) = 
+u(X)=F_{X}(x) = 
 \left\{
     \begin{array}{ll}
-        0 & \text{if } t \leq 1 \\
-        \int_{1}^{t} \frac{x-1}{2}  dx= \frac{t^2}{4} -\frac{1}{2}t+\frac{1}{4}& \text{if } 1 < t < 3 \\
-        \int_{1}^{3} \frac{x-1}{2}  dx=1 & \text{if } t \geq 3
+        0 & \text{if } x \leq 1 \\
+        \int_{1}^{x} \frac{t-1}{2}  dt= \frac{x^2}{4} -\frac{1}{2}x+\frac{1}{4}& \text{if } 1 < x < 3
     \end{array}
 \right.
 $$
@@ -114,9 +128,8 @@ $$
 f_{X}(x) = 
 \left\{
     \begin{array}{ll}
-        0 & \text{if } x < -1 \\
         \frac{1}{2} & \text{if } -1\leq x \leq 1 \\ 
-        0 & \text{if } x > 1 
+        0 & \text{else }
     \end{array}
 \right.
 $$
@@ -130,8 +143,7 @@ F_{Y}(y) =
 \left\{
     \begin{array}{ll}
         0 & \text{if } y < 0 \\
-        P(|X|\leq y)=P(-y\leq X\leq y)=\int_{-y}^{y}\frac{1}{2}dx=y & \text{if } 0\leq y \leq 1 \\
-        1 & \text{if } y > 1 
+        P(|X|\leq y)=P(-y\leq X\leq y)=\int_{-y}^{y}\frac{1}{2}dx=y & \text{if } 0\leq y \leq 1
     \end{array}
 \right.
 $$
@@ -139,7 +151,7 @@ $$
 Hence the pdf of \|X\| is:
 
 $$
-f(y) = 
+f(|x|)=f(y) = 
 \left\{
     \begin{array}{ll}
         1 & \text{if } 0\leq y \leq 1 \\
@@ -162,7 +174,7 @@ We can first generate 10 uniform random variables and then we find the inverse o
 
 **Answer:**
 
-Based on the assumption, we have
+Based on the assumption, we have cdf of X as:
 
 $$
 F_X(x)=P(X<x) = 
@@ -188,12 +200,11 @@ $$
 Since $Y=X^3$, the cdf of Y is:
 
 $$
-F_Y(y)=P(Y<y) = 
+F_Y(y)=P(Y<y)=P(X^3<y)=P(X<y^{\frac{1}{3}})=F_{X}(y^{\frac{1}{3}}) = 
 \left\{
     \begin{array}{ll}
         0 & \text{if } y \leq 0 \\
-        y^{\frac{1}{3}} & \text{if } 0<y<1 \\
-        1& \text{if } y \geq 1 
+        (y^{\frac{1}{3}})^2=y^{\frac{2}{3}} & \text{if } 0<y<1
     \end{array}
 \right.
 $$
@@ -204,7 +215,7 @@ $$
 f(y) = 
 \left\{
     \begin{array}{ll}
-        \frac{1}{3}y^{-2/3} & \text{if } 0<y<1 \\
+        \frac{2}{3}y^{-1/3} & \text{if } 0<y<1 \\
         0& \text{else }  
     \end{array}
 \right.
@@ -232,7 +243,7 @@ f(x) =
 \right.
 $$
 
-$1\leq |X| \leq 2$ can also be break parts:
+$1\leq |X| \leq 2$ can also be broken into two parts:
 
 If X is positive, we have $1\leq x \leq 2$
 
