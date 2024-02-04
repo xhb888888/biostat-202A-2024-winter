@@ -1,0 +1,94 @@
+---
+title: "hw3"
+author: "Hanbei Xiong"
+format: pdf
+editor: visual
+header-includes:
+  \usepackage{lipsum}
+  \usepackage{tcolorbox}
+---
+
+# Problem 1
+
+![](images/WeChatc3063296176c7f79bfe5d0c2824824cb.png)
+
+**Answer:**
+
+Assume A and B should both have uniform distribution
+
+$A\sim U(0,1)$ and $B\sim U(0,1)$
+
+$f_{A}(a)=1$ and $f_{B}(b)=1$ for $0\leq a \leq 1$ and $0\leq b \leq 1$ respectively.
+
+Since A and B are independent, the joint pdf is the product of the marginal pdfs.
+
+$f_{A,B}(a,b)=f_{A}(a)f_{B}(b)=1$ for $0\leq a \leq 1$ and $0\leq b \leq 1$ respectively.
+
+Then,
+
+$P(A\leq B)=\int_{0}^{1}\int_{0}^{b}1dadb=\int_{0}^{1}bda=\frac{1}{2}$
+
+# Problem 2
+
+![](images/WeChatd73b5ee85433479248462a20ffbb64fc.png)
+
+**(a) Answer:**
+
+X and Y are not independent since their supports are not rectangular support.
+
+**(b) Answer:**
+
+$f_{Y}(y)=\int_{0}^{\sqrt{y}}21x^2y dx=7x^3y\Big|_{0}^{\sqrt{y}}=7(\sqrt{y})^3y=7y^\frac{5}{2}$
+
+**(c) Answer:**
+
+**(d) Answer:**
+
+$F_{Y}(y)=\int_{0}^{y}7y^\frac{5}{2}dy=2y^\frac{7}{2}$, $0\leq y \leq 1$
+
+**(e) Answer:**
+
+We let y=x and graph it out. By selecting a random point like (1,0), we can tell the point is below the line. We can also let $x^2=y$ and graph it on the same graph. We can tell the support of the joint pdf is the area between this parabola. Hence, we are looking for the area between these two functions.
+
+The graph looks like this:
+
+![](images/WeChat5722c684a3f12fb955bf625e8c9eb68f.png){width="304"}
+
+$P(X\geq Y)=\int_{0}^{1}\int_{x^2}^{x}21x^2ydydx=\int_{0}^{1}7x^3y^2\Big|_{x^2}^{x}dx=\int_{0}^{1}7x^3(x-x^4)dx=\int_{0}^{1}7x^4-7x^7dx=\frac{7}{5}-\frac{7}{8}=\frac{21}{40}$
+
+# Problem 3
+
+![](images/WeChat9c62630d53a1417209b0164d7ac7ce96.png)
+
+**(a) Answer:**
+
+$f_{Y_1,Y_2}(y_1,y_2)=f(Y_1=y_1,Y_2=y_2)=f(X_1+X_2=y_1,X_1-X_2=y_2)=f(X_1=y_1-X_2,X_2=X_1+y_2)=f(X_1=y_1-X_1-y_2,X_2=y_1-X_2+y_2)=f(2X_1=y_1-y_2,2X_2=y_1+y_2)=f_{X_1,X_2}(\frac{y_1-y_2}{2},\frac{y_1+y_2}{2})=1$
+
+The support of this joint pdf is: $0<y_1<2$ and $-1<y_2<1$
+
+Here is the sketch (The box in the middle is our support):
+
+![](images/WeChat011ce51eb0aac95abd00936b183e9695.png){width="343"}
+
+# Problem 4
+
+![](images/WeChat66bc7f0f3dd1727b02712db4aa3e767a.png)
+
+**(a) Answer:**
+
+$P(X=x)=f_{X}(x)=\sum_{y\in S_y} g(x)h(y)=g(x)\sum_{y\in S_y}h(y)$
+
+$P(Y=y)=f_{Y}(y)=\sum_{x\in S_x} g(x)h(y)=h(y)\sum_{x\in S_x}g(x)$
+
+**(b) Answer:**
+
+$(\sum_{x\in S_x}g(x))(\sum_{y\in S_y}h(x))=\sum_{x\in S_x,y\in S_y}g(x)h(x)=\sum_{x\in S_x,y\in S_y}P(X=x,Y=y)=1$
+
+$P(X=x)P(Y=y)=(g(x)\sum_{y\in S_y}h(y))(h(y)\sum_{x\in S_x}g(x))=g(x)h(y)(\sum_{y\in S_y}h(y))(\sum_{x\in S_x}g(x))=g(x)h(y)=P(X=x,Y=y)$
+
+Hence, X and Y are independent.
+
+# Problem 5
+
+![](images/WeChatefc5d74c8906d2758af4fbbf6bf28a06.png)
+
