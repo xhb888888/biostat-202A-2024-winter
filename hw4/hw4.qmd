@@ -3,9 +3,6 @@ title: "hw3"
 author: "Hanbei Xiong"
 format: pdf
 editor: visual
-header-includes:
-  \usepackage{lipsum}
-  \usepackage{tcolorbox}
 ---
 
 # Problem 1
@@ -70,6 +67,10 @@ Here is the sketch (The box in the middle is our support):
 
 ![](images/WeChat011ce51eb0aac95abd00936b183e9695.png){width="343"}
 
+**(b) Answer:**
+
+$f_Y(y_1)=\int_{0}^{y_1}1dy_2=y_1$ with support $0<y_1<2$
+
 # Problem 4
 
 ![](images/WeChat66bc7f0f3dd1727b02712db4aa3e767a.png)
@@ -91,4 +92,3 @@ Hence, X and Y are independent.
 # Problem 5
 
 ![](images/WeChatefc5d74c8906d2758af4fbbf6bf28a06.png)
-
