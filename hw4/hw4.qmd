@@ -1,7 +1,7 @@
 ---
-title: "hw3"
+title: "hw4"
 author: "Hanbei Xiong"
-format: pdf
+format: html
 editor: visual
 ---
 
@@ -13,17 +13,47 @@ editor: visual
 
 Assume A and B should both have uniform distribution
 
-$A\sim U(0,1)$ and $B\sim U(0,1)$
+$A\sim U(1,2)$ and $B\sim U(1,2)$
 
-$f_{A}(a)=1$ and $f_{B}(b)=1$ for $0\leq a \leq 1$ and $0\leq b \leq 1$ respectively.
+$f_{A,B}(a,b)=1$ for $1\leq a \leq 2$ and $1\leq b \leq 2$
 
-Since A and B are independent, the joint pdf is the product of the marginal pdfs.
+Let X = B-A
 
-$f_{A,B}(a,b)=f_{A}(a)f_{B}(b)=1$ for $0\leq a \leq 1$ and $0\leq b \leq 1$ respectively.
+Then:
 
-Then,
+$$
+X=
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } B-A\leq 0 \\
+        B-A & \text{if } B-A>0
+    \end{array}
+\right.
+$$
 
-$P(A\leq B)=\int_{0}^{1}\int_{0}^{b}1dadb=\int_{0}^{1}bda=\frac{1}{2}$
+$$
+F_X(x)=
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } x\leq 0 \\
+        P(B-A>0)+P(B-A\leq 0) & \text{if } 0<x<1 \\
+        1 & \text{if } x\geq 1
+    \end{array}
+\right.
+$$
+
+If we draw the graph where x-axis represented A and y-axis represented B, the support of X is a square form by $1\leq a \leq 2$ and $1\leq b \leq 2$. We can use the 1 minus the probability of landing on area of upper left triangle to represent the distribution of length of time that A waits for B. Here is the distribution:
+
+$$
+F_X(x)=
+\left\{
+    \begin{array}{ll}
+        0 & \text{if } x\leq 0 \\
+        1-\int_{1}^{2-x}\int_{a+x}^{2}1dbda = 1-\int_{1}^{2-x} (2-a-x)da = 1-[(2-x)a-\frac{a^2}{2}]\Big|_{1}^{2-x}=1-(2-x)^2+\frac{(2-x)^2}{2}+(2-x)-\frac{1}{2}=-(2-x)^2/2-x+\frac{5}{2}& \text{if } 0<x<1 \\
+        1 & \text{if } x\geq 1
+    \end{array}
+\right.
+$$
 
 # Problem 2
 
@@ -35,13 +65,19 @@ X and Y are not independent since their supports are not rectangular support.
 
 **(b) Answer:**
 
-$f_{Y}(y)=\int_{0}^{\sqrt{y}}21x^2y dx=7x^3y\Big|_{0}^{\sqrt{y}}=7(\sqrt{y})^3y=7y^\frac{5}{2}$
+$f_{Y}(y)=\int_{-\sqrt{y}}^{\sqrt{y}}\frac{21}{4}x^2y dx=\frac{7}{4}x^3y\Big|_{-\sqrt{y}}^{\sqrt{y}}=\frac{7}{2}y^\frac{5}{2}$ for $0\leq y \leq 1$
 
 **(c) Answer:**
 
+$E(Y)=\int_{-\infty}^{\infty} yf_{Y}(y)dy=\int_{0}^{1} \frac{7}{2}y^{\frac{7}{2}}dy=\frac{7}{9}y^{\frac{9}{2}}\Big|_{0}^{1}=\frac{7}{9}$
+
+$E(Y^2)=\int_{-\infty}^{\infty} y^2f_{Y}(y)dy=\int_{0}^{1} \frac{7}{2}y^{\frac{9}{2}}dy=\frac{7}{11}y^{\frac{11}{2}}\Big|_{0}^{1}=\frac{7}{11}$
+
+$Var(Y)=E(Y^2)-E(Y)^2=\frac{7}{11}-\frac{49}{81}\approx 0.0314$
+
 **(d) Answer:**
 
-$F_{Y}(y)=\int_{0}^{y}7y^\frac{5}{2}dy=2y^\frac{7}{2}$, $0\leq y \leq 1$
+$F_{Y}(y)=\int_{0}^{y}\frac{7}{2}z^\frac{5}{2}dz=y^\frac{7}{2}$, $0\leq y \leq 1$
 
 **(e) Answer:**
 
@@ -51,7 +87,7 @@ The graph looks like this:
 
 ![](images/WeChat5722c684a3f12fb955bf625e8c9eb68f.png){width="304"}
 
-$P(X\geq Y)=\int_{0}^{1}\int_{x^2}^{x}21x^2ydydx=\int_{0}^{1}7x^3y^2\Big|_{x^2}^{x}dx=\int_{0}^{1}7x^3(x-x^4)dx=\int_{0}^{1}7x^4-7x^7dx=\frac{7}{5}-\frac{7}{8}=\frac{21}{40}$
+$P(X\geq Y)=\int_{0}^{1}\int_{x^2}^{x}\frac{21}{4}x^2ydydx=\int_{0}^{1}\frac{21}{8}x^2y^2\Big|_{x^2}^{x}dx=\int_{0}^{1}\frac{21}{8}x^2(x^2-x^4)dx=\frac{21}{8}\int_{0}^{1}x^4-x^6dx=\frac{21}{8}[\frac{1}{5}x^5-\frac{1}{7}x^7]\Big|_{0}^{1}=\frac{21}{8}[\frac{1}{5}-\frac{1}{7}]=\frac{21}{8}[\frac{2}{35}]=\frac{3}{20}$
 
 # Problem 3
 
@@ -59,17 +95,53 @@ $P(X\geq Y)=\int_{0}^{1}\int_{x^2}^{x}21x^2ydydx=\int_{0}^{1}7x^3y^2\Big|_{x^2}^
 
 **(a) Answer:**
 
-$f_{Y_1,Y_2}(y_1,y_2)=f(Y_1=y_1,Y_2=y_2)=f(X_1+X_2=y_1,X_1-X_2=y_2)=f(X_1=y_1-X_2,X_2=X_1+y_2)=f(X_1=y_1-X_1-y_2,X_2=y_1-X_2+y_2)=f(2X_1=y_1-y_2,2X_2=y_1+y_2)=f_{X_1,X_2}(\frac{y_1-y_2}{2},\frac{y_1+y_2}{2})=1$
+We can find $x_1=u(y_1,y_2)$ and $x_2=v(y_1,y_2)$
 
-The support of this joint pdf is: $0<y_1<2$ and $-1<y_2<1$
+Since
 
-Here is the sketch (The box in the middle is our support):
+$Y_1=X_1+X_2$ and $Y_2=X_1-X_2$
 
-![](images/WeChat011ce51eb0aac95abd00936b183e9695.png){width="343"}
+$\Rightarrow X_1=\frac{Y_1+Y_2}{2}$ and $X_2=\frac{Y_1-Y_2}{2}$
+
+We can also transform the support of $X_1$ and $X_2$ to the support of $Y_1$ and $Y_2$.
+
+We have $0<X_1<1$ and $0<X_2<1$
+
+It becomes:
+
+$0<\frac{Y_1+Y_2}{2}<1$ and $0<\frac{Y_1-Y_2}{2}<1$
+
+The inequality can be saperated into four parts:
+
+$y_2>-y_1$ and $y_2<y_1$ and $y_2<2-y_1$ and $y_2>y_1-2$
+
+By setting inequality to equality, we can find the support of $Y_1$ and $Y_2$:
+
+![](images/WeChatde6c5b9784b3d21ccab0de0ca18586c5.png){width="423"}
+
+The horizontal axis is $y_1$ and the vertical axis is $y_2$. By pluging in point as (1,0), we know the support of joint distribution of $Y_1$ and $Y_2$ is the area between these lines.
+
+$$
+|J|=|det\begin{bmatrix}
+            \frac{\partial x_1}{\partial y_1} & \frac{\partial x_1}{\partial y_2} \\
+            \frac{\partial x_2}{\partial y_1} & \frac{\partial x_2}{\partial y_2} \\
+        \end{bmatrix}|=|det\begin{bmatrix}
+            \frac{1}{2} & \frac{1}{2} \\
+            \frac{1}{2} & -\frac{1}{2} \\
+        \end{bmatrix}|=\frac{1}{2}
+$$
+
+$f_{Y_1,Y_2}(y_1,y_2)=f_{X_1,X_2}(x_1,x_2)|J|=\frac{1}{2}$
 
 **(b) Answer:**
 
-$f_Y(y_1)=\int_{0}^{y_1}1dy_2=y_1$ with support $0<y_1<2$
+$$ 
+f_Y(y_1)=
+\begin{cases}
+\int_{-y_1}^{y_1}\frac{1}{2}dy_2=y_1 & \text{if } 0<y_1<1 \\
+\int_{y_1-2}^{-y_1+2}\frac{1}{2}dy_2=-y_1+2 & \text{if } 1<y_1<2
+\end{cases} 
+$$
 
 # Problem 4
 
@@ -92,3 +164,25 @@ Hence, X and Y are independent.
 # Problem 5
 
 ![](images/WeChatefc5d74c8906d2758af4fbbf6bf28a06.png)
+
+**Answer:**
+
+Given:
+
+$Pr(X=1)=p$
+
+$Pr(X=0)=1-p$
+
+$Pr(Y = 1|X=1)=r$
+
+$Pr(Y = 0|X=0)=s$
+
+We know:
+
+$Var(Y)=E(Y^2)-E(Y)^2$
+
+$E(Y)=1*Pr(Y=1)+0*Pr(Y=0)=1*(Pr(Y=1|X=1)Pr(X=1)+Pr(Y=1|X=0)Pr(X=0))=rp+(1-s)(1-p)$
+
+$E(Y^2)=1^2*Pr(Y=1)+0^2*Pr(Y=0)=1^2*(Pr(Y=1|X=1)Pr(X=1)+Pr(Y=1|X=0)Pr(X=0))=rp+(1-s)(1-p)$
+
+$Var(Y)=rp+(1-s)(1-p)-[rp+(1-s)(1-p)]^2$
