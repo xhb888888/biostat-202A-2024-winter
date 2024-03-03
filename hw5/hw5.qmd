@@ -1,0 +1,30 @@
+---
+title: "hw5"
+author: "Hanbei Xiong"
+format: html
+editor: visual
+---
+
+# Problem 1
+
+![](images/WeChate321ba9f5158dfa487a5e9b9eacdbe03.png)
+
+# Problem 2
+
+![](images/WeChat2786dfac7d92e153fd756387dc5c2e6b.png)
+
+# Problem 3
+
+![](images/WeChat12c0895b79f5a4373f5a03dca6c2e1b7.png)
+
+# Problem 4
+
+![](images/WeChat5f1c95ea99065e3c0db125829c2365b6.png)
+
+# Problem 5
+
+![](images/WeChatba5ab521a6857aeb1bd6841300bce3e8.png)
+
+# Problem 6
+
+![](images/WeChat9502520712662030aaee140764baa362.png)
